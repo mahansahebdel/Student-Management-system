@@ -1,1 +1,4 @@
 mahan,22,17
+mahan,25,80
+akbar,12,23
+sghar,20,30

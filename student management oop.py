@@ -22,7 +22,9 @@ class StudentManagementSystem:
             name = input("Enter student name: ").strip()
             if not name:
                 raise ValueError("Name cannot be empty.")
-
+            elif not name.replace(" ", "").isalpha():
+                raise ValueError("Name must contain only alphabetic characters.")
+            
             age = int(input("Enter student age: "))
             if age <= 0:
                 raise ValueError("Age must be a positive number.")
@@ -32,7 +34,11 @@ class StudentManagementSystem:
             grade = input("Enter student grade: ").strip()
             if not grade:
                 raise ValueError("Grade cannot be empty.")
-
+            else:
+                    grade = int(grade)
+                    if grade < 0 or grade > 20:
+                        raise ValueError("Grade must be between 0 and 20.")
+                
             student = Student(name, age, grade)
             self.students.append(student)
 
